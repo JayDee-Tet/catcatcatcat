@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat Pictures</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background: #fff;
+  }
+
+  #catImage {
+    max-width: 90%;
+    max-height: 70vh;
+    display: none;
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+  <img id="catImage" alt="A cat">
+  <button id="fetchBtn">Show me a cat</button>
+
+<script>
+  const img = document.getElementById('catImage');
+  const btn = document.getElementById('fetchBtn');
+
+  btn.addEventListener('click', () => {
+    img.src = 'https://cataas.com/cat?ts=' + Date.now();
+    img.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
